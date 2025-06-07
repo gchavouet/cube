@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cube Pivot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="sidebar">
+    <h2>Modèles</h2>
+    <input type="text" id="searchModel" placeholder="Rechercher..." oninput="updateModelList()" style="width:100%; margin-bottom:0.5rem;">
+    <div id="modelList"></div>
+    <button onclick="addModel()">Ajouter</button>
+    <button onclick="saveModel()">Sauvegarder</button>
+    <button onclick="exportModels()">Exporter JSON</button>
+    <input type="file" accept=".json" onchange="importModels(event)">
+  </div>
+  <div id="main">
+    <div id="fieldSelector"></div>
+    <div class="dropzone" id="rowZone">Lignes</div>
+    <div class="dropzone" id="colZone">Colonnes</div>
+    <div class="dropzone" id="valZone">Valeurs</div>
+    <div class="filter-group" id="filterPanel"></div>
+    <div class="actions">
+      <button onclick="renderCube()">Afficher Cube</button>
+      <button onclick="exportCSV()">Exporter CSV</button>
+      <button onclick="resetZones()">Réinitialiser</button>
+    </div>
+    <div id="cubeContainer"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
